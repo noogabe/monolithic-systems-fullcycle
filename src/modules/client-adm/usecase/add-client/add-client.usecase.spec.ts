@@ -1,42 +1,41 @@
-import Address from "../../../@shared/domain/value-object/address"
-import AddClientUseCase from "./add-client.usecase"
+import AddClientUseCase from "./add-client.usecase";
 
-const MockRepository = () => {
-  return {
+const mockRepository = () => {
+    return {
+        add: jest.fn(),
+        find: jest.fn(),
+    };
+};
 
-    add: jest.fn(),
-    find: jest.fn()
-  }
-}
+describe("Add Client UseCase test", () => {
+    it("Should add a client", async () => {
+        const repository = mockRepository();
+        const useCase = new AddClientUseCase(repository);
+        const input = {            
+            name: "John Doe",
+            email: "a@a.com",
+            document: "123456789",
+            address: "Rua 1",
+            number: "123",
+            complement: "Casa",
+            city: "São Paulo",
+            state: "SP",
+            zipCode: "12345678",
+        };
 
-describe("Add Client use case unit test", () => {
+        const result = await useCase.execute(input);
 
-  it("should add a client", async () => {
-
-    const repository = MockRepository()
-    const usecase = new AddClientUseCase(repository)
-
-    const input = {
-      name: "Lucian",
-      email: "lucian@123.com",
-      document: "1234-5678",
-      address: new Address(
-        "Rua 123",
-        "99",
-        "Casa Verde",
-        "Criciúma",
-        "SC",
-        "88888-888",
-      )
-    }
-
-    const result =  await usecase.execute(input)
-
-    expect(repository.add).toHaveBeenCalled()
-    expect(result.id).toBeDefined()
-    expect(result.name).toEqual(input.name)
-    expect(result.email).toEqual(input.email)
-    expect(result.address).toEqual(input.address)
-
-  })
-})
+        expect(repository.add).toBeCalledTimes(1);
+        expect(result.id).toBeDefined();
+        expect(result.name).toEqual(input.name);
+        expect(result.email).toEqual(input.email);
+        expect(result.document).toEqual(input.document);
+        expect(result.address).toEqual(input.address);        
+        expect(result.number).toEqual(input.number);
+        expect(result.complement).toEqual(input.complement);
+        expect(result.city).toEqual(input.city);
+        expect(result.state).toEqual(input.state);
+        expect(result.zipCode).toEqual(input.zipCode);
+        
+    });
+});

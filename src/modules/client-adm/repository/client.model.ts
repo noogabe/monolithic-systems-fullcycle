@@ -1,44 +1,44 @@
 import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
 
 @Table({
-  tableName: 'client',
-  timestamps: false
+  tableName: "clients",
+  timestamps: false,
 })
-export class ClientModel extends Model {
-  @PrimaryKey
-  @Column({ allowNull: false })
-  id: string
+export default class ClientAdmClientModel extends Model {
+    @PrimaryKey
+    @Column({ allowNull: false })
+    declare id: string;
 
-  @Column({ allowNull: false })
-  name: string
+    @Column({ allowNull: false })
+    declare name: string;
 
-  @Column({ allowNull: false })
-  email: string
+    @Column({ allowNull: false })
+    declare email: string;
 
-  @Column({ allowNull: false })
-  document: string
+    @Column({ allowNull: false })
+    declare document: string;    
 
-  @Column({ allowNull: false })
-  street: string
+    @Column({ allowNull: false })
+    declare address: string;
 
-  @Column({ allowNull: false })
-  number: string
+    @Column({ allowNull: false })
+    declare number: string;
 
-  @Column({ allowNull: true })
-  complement: string
+    @Column({ allowNull: false })
+    declare complement: string;
 
-  @Column({ allowNull: false })
-  city: string
+    @Column({ allowNull: false })
+    declare city: string;
 
-  @Column({ allowNull: false })
-  state: string
+    @Column({ allowNull: false })
+    declare state: string;
 
-  @Column({ allowNull: false })
-  zipcode: string
+    @Column({ allowNull: false })
+    declare zipCode: string;
 
-  @Column({ allowNull: false })
-  createdAt: Date
+    @Column({ allowNull: false })
+    declare createdAt: Date;
 
-  @Column({ allowNull: false })
-  updatedAt: Date
+    @Column({ allowNull: false })
+    declare updatedAt: Date;
 }
