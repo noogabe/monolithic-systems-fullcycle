@@ -9,7 +9,7 @@ productsRoute.post("/", async (request: Request, response: Response) => {
   const facade = ProductAdmFacadeFactory.create();
 
   try {
-    const { id, name, description, stock, purchasePrice } = request.body;
+    const { id, name, description, stock, purchasePrice, salesPrice } = request.body;
 
     const productDto: AddProductFacadeInputDto = {
       id,
@@ -17,6 +17,7 @@ productsRoute.post("/", async (request: Request, response: Response) => {
       description,
       stock,
       purchasePrice,
+      salesPrice,
     };
 
     await facade.addProduct(productDto);

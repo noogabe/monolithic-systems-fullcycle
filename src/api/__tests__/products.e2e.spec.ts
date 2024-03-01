@@ -17,6 +17,7 @@ describe("E2E test for product", () => {
       description: "notebook hp",
       stock: 10,
       purchasePrice: 20,
+      salesPrice: 40,
     });
 
     expect(response.status).toEqual(201);

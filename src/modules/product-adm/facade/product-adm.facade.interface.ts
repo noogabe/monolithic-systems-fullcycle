@@ -3,6 +3,7 @@ export interface AddProductFacadeInputDto {
   name: string;
   description: string;
   purchasePrice: number;
+  salesPrice: number;
   stock: number;
 }
 
