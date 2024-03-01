@@ -4,7 +4,7 @@ import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
   tableName: "clients",
   timestamps: false,
 })
-export default class ClientAdmClientModel extends Model {
+export default class ClientAdmModel extends Model {
     @PrimaryKey
     @Column({ allowNull: false })
     declare id: string;
@@ -19,7 +19,7 @@ export default class ClientAdmClientModel extends Model {
     declare document: string;    
 
     @Column({ allowNull: false })
-    declare address: string;
+    declare street: string;
 
     @Column({ allowNull: false })
     declare number: string;

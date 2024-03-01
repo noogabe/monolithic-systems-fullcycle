@@ -29,7 +29,7 @@ describe("ClientRepository test", () => {
         name: "John Doe",
         email: "a@a.com",
         document: "123456789",
-        address: "Rua 1",
+        street: "Rua 1",
         number: "123",
         complement: "Casa",
         city: "São Paulo",
@@ -45,7 +45,7 @@ describe("ClientRepository test", () => {
     expect(result.name).toEqual(client.name);
     expect(result.email).toEqual(client.email);
     expect(result.document).toEqual(client.document);
-    expect(result.address).toEqual(client.address);
+    expect(result.street).toEqual(client.street);
     expect(result.number).toEqual(client.number);
     expect(result.complement).toEqual(client.complement);
     expect(result.city).toEqual(client.city);
@@ -62,7 +62,7 @@ describe("ClientRepository test", () => {
         name: "John Doe",
         email: "a@a.com",
         document: "123456789",
-        address: "Rua 1",
+        street: "Rua 1",
         number: "123",
         complement: "Casa",
         city: "São Paulo",
@@ -79,7 +79,7 @@ describe("ClientRepository test", () => {
     expect(clientDb.name).toEqual(client.name);
     expect(clientDb.email).toEqual(client.email);
     expect(clientDb.document).toEqual(client.document);
-    expect(clientDb.address).toEqual(client.address);
+    expect(clientDb.street).toEqual(client.street);
     expect(clientDb.number).toEqual(client.number);
     expect(clientDb.complement).toEqual(client.complement);
     expect(clientDb.city).toEqual(client.city);

@@ -15,7 +15,7 @@ describe("Add Client UseCase test", () => {
             name: "John Doe",
             email: "a@a.com",
             document: "123456789",
-            address: "Rua 1",
+            street: "Rua 1",
             number: "123",
             complement: "Casa",
             city: "São Paulo",
@@ -30,7 +30,7 @@ describe("Add Client UseCase test", () => {
         expect(result.name).toEqual(input.name);
         expect(result.email).toEqual(input.email);
         expect(result.document).toEqual(input.document);
-        expect(result.address).toEqual(input.address);        
+        expect(result.street).toEqual(input.street);        
         expect(result.number).toEqual(input.number);
         expect(result.complement).toEqual(input.complement);
         expect(result.city).toEqual(input.city);

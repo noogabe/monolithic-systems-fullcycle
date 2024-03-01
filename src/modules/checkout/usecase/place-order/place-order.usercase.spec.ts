@@ -165,7 +165,7 @@ describe("PlaceOrderUseCase unit test", () => {
                 name: "Client 0",
                 document: "0000",
                 email: "client@user.com",
-                address: "some address",
+                street: "some street",
                 number: "1",
                 complement: "",
                 city: "some city",
@@ -329,7 +329,7 @@ describe("PlaceOrderUseCase unit test", () => {
                 expect(mockInvoiceFacade.generateInvoice).toHaveBeenCalledWith({
                     name: ClientProps.name,
                     document: ClientProps.document,
-                    street: ClientProps.address,
+                    street: ClientProps.street,
                     number: ClientProps.number,
                     complement: ClientProps.complement,
                     city: ClientProps.city,

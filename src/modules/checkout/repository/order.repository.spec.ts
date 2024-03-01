@@ -5,7 +5,7 @@ import { Order } from "../domain/order.entity";
 import { Client } from "../domain/client.entity";
 import { Product } from "../domain/product.entity";
 
-import { OrderModel } from "./order.model";
+import OrderModel from "./order.model";
 import { OrderRepository } from "./order.repository";
 
 const mockDate = new Date(2000, 1, 1);
@@ -50,7 +50,12 @@ describe("OrderRepository test", () => {
       id: new Id("1"),
       name: "John Doe",
       email: "john.doe@email.com",
-      address: "Main Street, CA, 123",
+      street: "some street",
+      number: "1",
+      complement: "",
+      city: "some city",
+      state: "some state",
+      zipCode: "000",
     });
 
     const order = new Order({
@@ -80,7 +85,12 @@ describe("OrderRepository test", () => {
         updatedAt: mockDate,
         name: "John Doe",
         email: "john.doe@email.com",
-        address: "Main Street, CA, 123",
+        street: "some street",
+        number: "1",
+        complement: "",
+        city: "some city",
+        state: "some state",
+        zipCode: "000",
       },
       products: [
         {
@@ -115,7 +125,12 @@ describe("OrderRepository test", () => {
     expect(clientResult.id).toEqual(orderData.client.id);
     expect(clientResult.name).toEqual(orderData.client.name);
     expect(clientResult.email).toEqual(orderData.client.email);
-    expect(clientResult.address).toEqual(orderData.client.address);
+    expect(clientResult.street).toEqual(orderData.client.street);
+    expect(clientResult.number).toEqual(orderData.client.number);
+    expect(clientResult.complement).toEqual(orderData.client.complement);
+    expect(clientResult.city).toEqual(orderData.client.city);
+    expect(clientResult.state).toEqual(orderData.client.state);
+    expect(clientResult.zipCode).toEqual(orderData.client.zipCode);
 
     expect(result.products.length).toEqual(orderData.products.length);
 

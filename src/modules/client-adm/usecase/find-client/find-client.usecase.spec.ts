@@ -7,7 +7,7 @@ const client = new Client({
     name: "Product 1",
     email: "a@a.com",
     document: "00000000000",
-    address: "Address 1",
+    street: "street 1",
     number: "1",
     complement: "Complement 1",
     city: "City 1",
@@ -37,7 +37,7 @@ describe("Find Client UseCase unit test", () => {
         expect(result.name).toEqual(client.name);
         expect(result.email).toEqual(client.email);
         expect(result.document).toEqual(client.document);
-        expect(result.address).toEqual(client.address);     
+        expect(result.street).toEqual(client.street);     
         expect(result.number).toEqual(client.number);
         expect(result.complement).toEqual(client.complement);
         expect(result.city).toEqual(client.city);

@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
-import { ClientAdmFacadeFactory } from "../factory/client-adm.facade.factory";
+import ClientAdmFacadeFactory from "../factory/client-adm.facade.factory";
 import ClientAdmClientModel from "../repository/client.model";
 
 describe("Client-adm facade test", () => {
@@ -25,7 +25,7 @@ describe("Client-adm facade test", () => {
         name: "John Doe",
         email: "a@a.com",
         document: "123456789",
-        address: "Rua 1",
+        street: "Rua 1",
         number: "123",
         complement: "Casa",
         city: "São Paulo",
@@ -40,7 +40,7 @@ describe("Client-adm facade test", () => {
     expect(clientDb.name).toEqual(input.name);
     expect(clientDb.email).toEqual(input.email);
     expect(clientDb.document).toEqual(input.document);
-    expect(clientDb.address).toEqual(input.address);    
+    expect(clientDb.street).toEqual(input.street);    
     expect(clientDb.number).toEqual(input.number);
     expect(clientDb.complement).toEqual(input.complement);
     expect(clientDb.city).toEqual(input.city);
@@ -57,7 +57,7 @@ describe("Client-adm facade test", () => {
         name: "John Doe",
         email: "a@a.com",
         document: "123456789",
-        address: "Rua 1",
+        street: "Rua 1",
         number: "123",
         complement: "Casa",
         city: "São Paulo",
@@ -72,7 +72,7 @@ describe("Client-adm facade test", () => {
     expect(client.name).toEqual(input.name);
     expect(client.email).toEqual(input.email);
     expect(client.document).toEqual(input.document);
-    expect(client.address).toEqual(input.address);
+    expect(client.street).toEqual(input.street);
     expect(client.number).toEqual(input.number);
     expect(client.complement).toEqual(input.complement);
     expect(client.city).toEqual(input.city);

@@ -6,7 +6,7 @@ export interface FindClientOutputDto {
   name: string;
   email: string;
   document: string;
-  address: string;
+  street: string;
   number: string;
   complement: string;
   city: string;

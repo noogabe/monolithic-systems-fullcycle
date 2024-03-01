@@ -52,7 +52,12 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
             id: new Id(client.id),
             name: client.name,
             email: client.email,
-            address: client.address,
+            street: client.street,
+            number: client.number,
+            complement: client.complement,
+            city: client.city,
+            state: client.state,
+            zipCode: client.zipCode
         });
         const order = new Order({
             client: myClient,
@@ -70,7 +75,7 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
                 await this._invoiceFacade.generateInvoice({
                     name: client.name,
                     document: client.document,
-                    street: client.address,
+                    street: client.street,
                     number: client.number,
                     complement: client.complement,
                     city: client.city,
